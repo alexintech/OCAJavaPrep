@@ -30,5 +30,11 @@ public class IncDecTest {
     a = 10;
     a = a++;  // post-increment is not performed after assigning to a
     System.out.println("a = a++; a equals " + a);
+
+    double val1 = 4.3;
+    val1--;
+    System.out.println(val1);
+    System.out.println(val1 % 1.3); // you can use ++, --, and % with floating
+                                    // point values
   }
 }
