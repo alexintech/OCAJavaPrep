@@ -1,4 +1,9 @@
 public class IncDecTest {
+  static void func(int val1, int val2) {
+    System.out.println(val1);
+    System.out.println(val2);
+  }
+  
   static int func(int val) {
     System.out.println(val);
     return val;
@@ -36,5 +41,8 @@ public class IncDecTest {
     System.out.println(val1);
     System.out.println(val1 % 1.3); // you can use ++, --, and % with floating
                                     // point values
+
+    int var1 = 10;
+    func(var1++, ++var1);
   }
 }
