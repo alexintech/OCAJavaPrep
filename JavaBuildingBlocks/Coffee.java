@@ -32,6 +32,7 @@ class Coffee {
       System.out.println(cs + " " + cs.getOunces() + " " + 
                             cs.getLidCode());
     }
+    //! CoffeeSize cof = new CoffeeSize(8); // enums can't be instantiated
   }
 }
     
