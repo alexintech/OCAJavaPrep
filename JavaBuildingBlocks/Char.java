@@ -9,5 +9,7 @@ public class Char {
     //! char c5 = -122;   // error: char cannot be negative
     char c6 = (char)-122;   // OK: casting
     System.out.println("c6 = " + c6);
+
+    Boolean []ba[];
   }
 }
