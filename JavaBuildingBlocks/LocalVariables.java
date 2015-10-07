@@ -9,6 +9,11 @@ public class LocalVariables {
       answer = 2; 
     }
     System.out.println(answer);
-    System.out.println(onlyOneBranch); // DOES NOT COMPILE 
+    //! System.out.println(onlyOneBranch); // DOES NOT COMPILE 
+
+    double price;
+    if (true)           // Compiler know it's always true
+      price = 100.0;
+    System.out.println(price);  // But this is OK
   }
 }
