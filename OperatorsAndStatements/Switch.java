@@ -46,6 +46,20 @@ public class Switch {
     printDays(5);
     printDays(6);
     printDays(0);
+
+    final int a = 10;
+    final int b = 20;
+    final int c = 30;
+    final int d;  // d is not initialized right after declaration, so it is not
+                  // a compile-time constant
+    d = 40;
+    switch(a) {
+      case b+c: System.out.println(b + c); break;   // OK
+      case 10*7: System.out.println(b + c); break;  // OK
+      //! case d+c: System.out.println(d + c); break;  // error: d is not compile-time constant 
+      //! case d: System.out.println(d); break;  // error: d is not compile-time constant 
+      case b: System.out.println(b); break;  // OK 
+    } 
   }
 }
 
