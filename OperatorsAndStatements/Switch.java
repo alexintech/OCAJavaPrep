@@ -59,7 +59,16 @@ public class Switch {
       //! case d+c: System.out.println(d + c); break;  // error: d is not compile-time constant 
       //! case d: System.out.println(d); break;  // error: d is not compile-time constant 
       case b: System.out.println(b); break;  // OK 
+      case 'a': System.out.println('a'); break;  // OK 
+      //! case (short)b: System.out.println((short)b); break;  // error: duplicate case value
+      case (short)15: System.out.println((short)15); break;  // OK 
     } 
+
+    String name = "Paul";
+    switch(name) {
+      case "Paul": System.out.println("Paul"); break;
+      //! case null: System.out.println("null"); break; // error: null isn't allowed
+    }
   }
 }
 
