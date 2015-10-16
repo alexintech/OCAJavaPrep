@@ -1,4 +1,8 @@
 public class Switch {
+  enum SpiceDegree {
+    MILD, MEDIUM, HOT, SUICIDE;
+  }
+
   static void printDays(int dayOfWeek) {
     switch(dayOfWeek) {
       case 0:
@@ -68,6 +72,16 @@ public class Switch {
     switch(name) {
       case "Paul": System.out.println("Paul"); break;
       //! case null: System.out.println("null"); break; // error: null isn't allowed
+    }
+
+    SpiceDegree spice = SpiceDegree.HOT;
+    switch(spice) {
+      //! case SpiceDegree.HOT: // error: an enum switch case label must be 
+                            // the unqualified name of an enumeration constant
+      //  System.out.println("Have fun!");
+      //  break;
+      default: 
+        System.out.println("Enjoy!");
     }
   }
 }
