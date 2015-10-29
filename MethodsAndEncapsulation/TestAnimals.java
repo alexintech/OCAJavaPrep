@@ -29,6 +29,28 @@ class UseAnimals {
   }
 }
 
+class Overrides {
+  public static void main(String[] args) {
+    Animal a = new Animal();
+    a.eat(); // Generic Animal Eating Generically
+
+    Horse h = new Horse();
+    h.eat(); // Horse eating hay
+
+    Animal ah = new Horse();
+    ah.eat(); // Horse eating hay
+
+    Horse he = new Horse();
+    he.eat("Apples"); // Horse eating hay
+
+    Animal a2 = new Animal();
+    //! a2.eat("treats");   // compiler error!
+
+    Animal ah2 = new Horse();
+    //! ah2.eat("Carrots");   // compiler error!
+  }
+}
+
 class Animal {
   public void eat() {
     System.out.println("Generic Animal Eating Generically");
@@ -39,18 +61,25 @@ class Animal {
 }
 
 class Horse extends Animal {
+  // legal overriding
+  public void eat() {
+    System.out.println("Horse eating hay");
+  }
+
+  // legal overloading
+  public void eat(String s) {
+    System.out.println("Horse eating " + s);
+  }
+
+  // that's legal
+  public void jump() { /* no Exceptions */ }
+
   /* error: attempting to assign weaker access privileges; was public
   private void eat() {
     System.out.println("Horse eating hay, oats, "
                         + "and horse treats");
   }
   */
-
-  // legal overriding
-  public void eat() {
-    System.out.println("Horse eating hay, oats, "
-                        + "and horse treats");
-  }
 
   /* error: overridden method does not throw IOException
   public void eat() throws IOException { }
@@ -65,7 +94,4 @@ class Horse extends Animal {
     //! super.doStuff();  // error: non-static variable super
                           // cannot be referenced from a static context
   }
-
-  // that's legal
-  public void jump() { /* no Exceptions */ }
 }
