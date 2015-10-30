@@ -9,4 +9,11 @@ public class StaticInitialization {
     //! three = 3;  // error: reassign value
     //! two = 4;    // error: variable two might already have been assigned
   }
+
+  static int[] x = new int[4];
+  static {
+    x[4] = 5; // Exception in thread "main" java.lang.ExceptionInInitializerError
+              // Caused by: java.lang.ArrayIndexOutOfBoundsException: 4
+  }
+  public static void main(String[] args) { }
 }
