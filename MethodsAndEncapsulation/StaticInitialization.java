@@ -10,6 +10,11 @@ public class StaticInitialization {
     //! two = 4;    // error: variable two might already have been assigned
   }
 
+  static {
+    int a = 5;
+    //! if(a == 5) return; // error: return outside method
+    a = 6;
+  }
   static int[] x = new int[4];
   static {
     x[4] = 5; // Exception in thread "main" java.lang.ExceptionInInitializerError
