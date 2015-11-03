@@ -1,4 +1,4 @@
-public enum Meal {
+public enum Meal implements ITimeInfo {
   //! private int date; // You can't declare anything before enum constants
   // Each enum constant defines a constant-specific class body
   BREAKFAST(7,30) {
