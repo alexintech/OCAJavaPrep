@@ -4,6 +4,7 @@ public class Arrays {
   public static void main(String[] args) {
     int[] localInit; // not initialized
     System.out.println(testInit);
+    System.out.println(testInit[0]); // NullPointerException
     //! System.out.println(localInit);
 
     int anIntArray[], oneInteger;
@@ -20,5 +21,7 @@ public class Arrays {
     //! a = {1, 2, 3}; // not an expression. It doesn't return value
     a = new int[] {1, 2, 3}; // anonymous array
     //! a = new int[3] {1, 2, 3}; // error syntax
+    a[(int)2L] = 5;
+    a['a'] = 1;
   }
 }
