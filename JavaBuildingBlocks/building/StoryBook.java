@@ -13,5 +13,12 @@ public class StoryBook extends Book {
     StoryBook sb = new StoryBook();
     sb.modifyTemplate();  // OK, because sb is a reference to this class
     String v = sb.author;
+  }; // colon is legal
+  void action(Book book, StoryBook storyBook, SubStoryBook subStoryBook) {
+    author = "Author";
+    //! book.author = "Author";
+    storyBook.author = "Author";
+    subStoryBook.author = "Author"; // OK, because subStoryBook is a ref to subclass
   }
+
 }
