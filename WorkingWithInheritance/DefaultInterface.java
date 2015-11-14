@@ -5,6 +5,8 @@ interface Carnivore {
   public int getRequiredFoodAmount() {
     return 13;
   }
+
+  public int getNumberOfFins();
 }
 
 interface HasFins {
@@ -35,3 +37,6 @@ interface SharkFamily extends HasFins {
     return false;
   }
 }
+
+// error: inherits abstract and default methods
+interface CarnivoreFins extends Carnivore, HasFins { }
