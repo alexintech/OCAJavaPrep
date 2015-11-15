@@ -1,12 +1,22 @@
-final class Item {
+class Item {
   Integer size;
   Item(Integer size) {
     this.size = size;
+  }
+  private Item() {
+    size = 1;
   }
   // overloading equals(Object o) method
   public boolean equals(Item item2) {
     if (this == item2) return true;
     return this.size.equals(item2.size);
+  }
+}
+
+class Sword extends Item {
+  public Sword() {
+    //! super(); // private constructor cannot be called
+    super(5);
   }
 }
 
