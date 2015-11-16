@@ -1,4 +1,4 @@
-class Item {
+class Item implements Something {
   Integer size;
   Item(Integer size) {
     this.size = size;
@@ -12,6 +12,16 @@ class Item {
     return this.size.equals(item2.size);
   }
 }
+
+interface Something { }
+
+// error: default method toString in interface Something
+// overrides a member of java.lang.Object
+// interface LikeObject {
+//   public default String toString() {
+//     return "Something";
+//   }
+// }
 
 class Sword extends Item {
   public Sword() {
@@ -29,6 +39,11 @@ class SkepticRide {
     System.out.println("|" + itemA.equals(itemB) +
                        "|" + itemC.equals(itemB) + "|");
     // prints |true|false|
+
+    Something s = itemA;
+    // You can use Object's methods over interface type reference
+    System.out.println(s.toString());
+    System.out.println(s.equals(itemB));
   }
 }
 
