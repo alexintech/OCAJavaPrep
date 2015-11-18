@@ -13,6 +13,9 @@ class Print implements Function {
     System.out.print(value + " ");
     return value;
   }
+  protected void finalize() throws Throwable {
+    System.out.println();
+  }
 }
 
 public class ClientHalf {
