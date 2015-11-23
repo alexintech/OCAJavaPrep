@@ -50,6 +50,32 @@ public class UsingArrayList {
     one.add("b");
     two.add(0, "b");
     System.out.println(one.equals(two)); // false
+
+    List<String> list1 = new ArrayList<>();
+    list1.add("hawk");
+    list1.add("robin");
+    Object[] objectArray = list1.toArray();
+    System.out.println(objectArray.length); // 2
+    String[] stringArray = list1.toArray(new String[0]);
+    System.out.println(stringArray.length); // 2
+
+    String[] array = { "hawk", "robin" };
+    List<String> list2 = Arrays.asList(array); // returns fixed size list
+    System.out.println(list2.size()); // 2
+    list2.set(1, "test");
+    array[0] = "new";
+    for (String b : array) System.out.print(b + " ");  // new test
+    System.out.println();
+    // list2.remove(1);    // throws UnsupportedOperationException
+
+    List<String> nums = Arrays.asList("one", "two");
+
+    List<Integer> numbers = new ArrayList<>();
+    numbers.add(99);
+    numbers.add(5);
+    numbers.add(81);
+    Collections.sort(numbers);
+    System.out.println(numbers);
   }
 }
 
