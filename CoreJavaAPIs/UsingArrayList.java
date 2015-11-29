@@ -76,6 +76,17 @@ public class UsingArrayList {
     numbers.add(81);
     Collections.sort(numbers);
     System.out.println(numbers);
+
+    ArrayList<String> myArrList = new ArrayList<String>();
+    myArrList.add("One");
+    myArrList.add("Two");
+
+    ArrayList<String> yourArrList = new ArrayList<String>();
+    yourArrList.add("Three");
+    yourArrList.add("Four");
+
+    myArrList.addAll(1, yourArrList);
+    myArrList.forEach((val) -> System.out.println(val)); // using forEach()
   }
 }
 
