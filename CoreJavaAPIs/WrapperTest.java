@@ -5,6 +5,18 @@ public class WrapperTest {
     int primitive = Integer.parseInt("123");
     Integer wrapper = Integer.valueOf("123");
 
+    Byte bRef1 = (byte)10;
+    Byte bRef2 = (byte)10;
+    System.out.println(bRef1 == bRef2);       // true
+    System.out.println(bRef1.equals(bRef2));  // true
+
+    Integer iRef1 = 1000;
+    Integer iRef2 = 1000;
+    System.out.println(iRef1 == iRef2);       // false
+    System.out.println(iRef1.equals(iRef2));  // true
+    System.out.println(iRef1.hashCode());     // 1000
+    System.out.println(Character.toUpperCase('б'));     // Б
+
     // int bad1 = Integer.parseInt("a");           // throws NumberFormatException
     // Integer bad2 = Integer.valueOf("123.45");   // throws NumberFormatException
 
