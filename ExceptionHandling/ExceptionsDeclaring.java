@@ -5,7 +5,9 @@ class Animal {
 }
 
 class Rabbit extends Animal {
-  public void eat() throws NoMoreCarrotsException { }
+  public void eat() throws Exception, NoMoreCarrotsException {
+    throw new Exception("no more carrots");
+  }
 }
 
 public class ExceptionsDeclaring {
@@ -29,9 +31,11 @@ public class ExceptionsDeclaring {
     try {
       animal.eat();
     } catch (NoMoreCarrotsException e) {
-      System.out.println("OK");
+      e.printStackTrace();
     } catch (Exception e) {
-      System.out.println("OK");
+      System.out.println(e);
+      System.out.println(e.getMessage());
+      e.printStackTrace();
     }
   }
 }
