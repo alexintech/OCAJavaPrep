@@ -4,10 +4,10 @@ class Camera {
     if (false) {      // OK
       System.out.println("Camera:" + settings);
     }
-    while (false) {     // unreachable statement
+    while (false) {     // error: unreachable statement
       settings = "Adjust settings manually";
     }
-    for (; false ; ) {  // unreachable statement
+    for (; false ; ) {  // error: unreachable statement
     }
     System.out.println("Camera:" + settings);
   }
