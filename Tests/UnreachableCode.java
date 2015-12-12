@@ -11,6 +11,14 @@ public class UnreachableCode {
       }
       //! index++;  // unreachable statement
     }
+
+    if (true) {
+      //! break; // error: break outside switch or loop
+    }
+
+    {
+      //! break; // error: also illegal
+    }
   }
 }
 
