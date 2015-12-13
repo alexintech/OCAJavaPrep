@@ -9,6 +9,7 @@ public class SwitchTest {
     }
 
     byte a = 'x';  // char is assignable to byte!
+    Byte b = 1;
   }
 }
 
