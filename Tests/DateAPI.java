@@ -1,5 +1,6 @@
 import java.time.*;
 import java.time.temporal.*;
+import java.time.format.*;
 
 public class DateAPI {
   public static void main(String[] args) {
@@ -16,6 +17,8 @@ public class DateAPI {
     date = ZonedDateTime.of(ld, ZoneId.of("US/Eastern"));
     date = date.plus(Period.ofDays(1));  // 2015-11-01T10:00-05:00[US/Eastern]
     System.out.println(date);
+
+    System.out.println(DateTimeFormatter.ISO_ZONED_DATE_TIME.format(date));
   }
 }
 
