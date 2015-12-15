@@ -1,4 +1,8 @@
 public class Convertion {
+
+  //! static {   // error: initializer must be able to complete normally
+    // throw new NullPointerException();
+  // }
   public static void main(String[] args) {
     int i = 1234567890;
     float f = i;  // information was lost
